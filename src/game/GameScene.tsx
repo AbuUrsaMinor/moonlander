@@ -53,32 +53,33 @@ export const GameScene: FC = () => {
             setGameStatus('playing')
         }
     }
-
     return (
-        <div className="w-full h-full relative">            <Canvas className="touch-none" shadows>                <OrthographicCamera makeDefault position={[0, 50, 70]} zoom={8} rotation={[-0.6, 0, 0]} />
-            <color attach="background" args={['#000000']} />
-            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade />
+        <div className="w-full h-full relative">
+            <Canvas className="touch-none" shadows>
+                <OrthographicCamera makeDefault position={[0, 45, 65]} zoom={7} rotation={[-0.45, 0, 0]} />
+                <color attach="background" args={['#000000']} />
+                <Stars radius={100} depth={50} count={3000} factor={2} saturation={0} fade speed={0.5} />
 
-            {/* Lighting */}
-            <ambientLight intensity={0.4} />
-            <directionalLight
-                position={[5, 5, 5]}
-                intensity={1}
-                castShadow
-                shadow-mapSize={[2048, 2048]}
-            />
-            <hemisphereLight
-                args={['#ffffff', '#333333', 0.5]}
-                position={[0, 50, 0]}
-            />
+                {/* Lighting */}
+                <ambientLight intensity={0.4} />
+                <directionalLight
+                    position={[5, 5, 5]}
+                    intensity={1}
+                    castShadow
+                    shadow-mapSize={[2048, 2048]}
+                />
+                <hemisphereLight
+                    args={['#ffffff', '#333333', 0.5]}
+                    position={[0, 50, 0]}
+                />
 
-            {/* Scene */}
-            <Spacecraft />            {/* Lunar Surface */}
-            <LunarSurface />
+                {/* Scene */}
+                <Spacecraft />            {/* Lunar Surface */}
+                <LunarSurface />
 
-            {/* Environment */}
-            <fog attach="fog" args={['#000000', 50, 150]} />
-        </Canvas>
+                {/* Environment */}
+                <fog attach="fog" args={['#000000', 50, 150]} />
+            </Canvas>
 
             {/* UI Overlays */}
             {gameStatus === 'start' && (

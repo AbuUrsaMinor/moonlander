@@ -96,21 +96,13 @@ export const LunarSurface: FC = () => {
                 />
             </mesh>
 
-            {/* Edge highlight wireframe */}
-            <mesh rotation={[-Math.PI / 2, 0, 0]} geometry={terrain} position={[0, 0.1, 0]}>
+            {/* Edge highlight wireframe */}            {/* Single, more subtle wireframe overlay */}
+            <mesh rotation={[-Math.PI / 2, 0, 0]} geometry={terrain} position={[0, 0.05, 0]}>
                 <meshBasicMaterial
-                    color="#ff5533"
+                    color="#335577"
                     wireframe={true}
-                    wireframeLinewidth={1}
-                />
-            </mesh>
-
-            {/* Add another wireframe layer with different color for depth perception */}
-            <mesh rotation={[-Math.PI / 2, 0, 0]} geometry={terrain} position={[0, 0.3, 0]}>
-                <meshBasicMaterial
-                    color="#ffff00"
-                    wireframe={true}
-                    opacity={0.3}
+                    wireframeLinewidth={0.5}
+                    opacity={0.2}
                     transparent={true}
                 />
             </mesh>

@@ -8,7 +8,7 @@ import type { FC } from 'react'
 export const Spacecraft: FC = () => {
     const meshRef = useRef<Group>(null)
     const positionRef = useRef({ x: 0, z: 0 })
-    const { rotation, thrust, velocity } = useGameStore()
+    const { rotation, thrust, velocity, altitude } = useGameStore()
 
     useFrame((_, delta) => {
         if (meshRef.current) {
@@ -18,6 +18,7 @@ export const Spacecraft: FC = () => {
             // Update position based on velocity
             positionRef.current.x += velocity.x * delta
             meshRef.current.position.x = positionRef.current.x
+            meshRef.current.position.y = altitude // Set Y position based on altitude
             meshRef.current.position.z = positionRef.current.z
         }
     })
@@ -36,16 +37,23 @@ export const Spacecraft: FC = () => {
                     <meshStandardMaterial color="#aaaaaa" metalness={0.6} roughness={0.4} />
                 </mesh>
             ))}
-        </group>
-
-        {/* Thrust particles */}
+        </group>        {/* Thrust particles */}
         {thrust && (
             <>
+                {/* Main thrust cone */}
                 <mesh position={[0, -1.2, 0]}>
-                    <coneGeometry args={[0.3, 0.8, 16]} />
-                    <meshStandardMaterial color="#ff4400" emissive="#ff4400" emissiveIntensity={2} transparent opacity={0.6} />
+                    <coneGeometry args={[0.4, 1.0, 16]} />
+                    <meshStandardMaterial color="#ff5500" emissive="#ff5500" emissiveIntensity={3} transparent opacity={0.7} />
                 </mesh>
-                <pointLight position={[0, -1.2, 0]} color="#ff4400" intensity={3} distance={4} />
+
+                {/* Inner brighter cone */}
+                <mesh position={[0, -1.1, 0]}>
+                    <coneGeometry args={[0.2, 0.7, 12]} />
+                    <meshStandardMaterial color="#ffdd00" emissive="#ffdd00" emissiveIntensity={4} transparent opacity={0.8} />
+                </mesh>
+
+                {/* Enhanced light effect */}
+                <pointLight position={[0, -1.2, 0]} color="#ff6600" intensity={5} distance={6} />
             </>
         )}
     </group>

@@ -1,5 +1,5 @@
 export const GRAVITY = -1.62 // Moon's gravity in m/s²
-export const THRUST_FORCE = 3.0 // Thrust force in m/s²
+export const THRUST_FORCE = 4.5 // Thrust force in m/s² (increased from 3.0)
 export const ROTATION_SPEED = 3.0 // Degrees per frame when rotating
 export const FUEL_CONSUMPTION_RATE = 0.5 // Percentage per second while thrusting
 export const TERMINAL_VELOCITY = 20 // Maximum velocity in m/s
