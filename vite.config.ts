@@ -8,26 +8,25 @@ export default defineConfig({
   base: '/moonylander/', // Set base for GitHub Pages deployment
   plugins: [
     react(),
-    tailwindcss(),
-    VitePWA({
+    tailwindcss(),    VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['vite.svg'],
+      includeAssets: ['moonlander-icon.svg'],
       manifest: {
-        name: 'MoonyLander',
-        short_name: 'MoonyLander',
-        description: 'MoonyLander Game',
-        theme_color: '#242424',
-        background_color: '#242424',
+        name: 'MoonLander',
+        short_name: 'MoonLander',
+        description: 'Moon Lander Game - Control your spacecraft and land safely on the lunar surface',
+        theme_color: '#000000',
+        background_color: '#000000',
         display: 'standalone',
-        start_url: '/moonylander/',
+        start_url: '/moonlander/',
         icons: [
           {
-            src: 'vite.svg',
+            src: 'moonlander-icon.svg',
             sizes: '192x192',
             type: 'image/svg+xml',
           },
           {
-            src: 'vite.svg',
+            src: 'moonlander-icon.svg',
             sizes: '512x512',
             type: 'image/svg+xml',
           },
