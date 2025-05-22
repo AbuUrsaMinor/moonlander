@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background (Moon surface) -->
+    <circle cx="256" cy="256" r="250" fill="#111111" stroke="#333333" stroke-width="4"/>
+    <ellipse cx="256" cy="420" rx="220" ry="40" fill="#444444"/>
+    <ellipse cx="256" cy="420" rx="160" ry="25" fill="#333333"/>
+    <!-- Craters -->
+    <circle cx="156" cy="380" r="20" fill="#222222"/>
+    <circle cx="356" cy="400" r="15" fill="#222222"/>
+    <circle cx="256" cy="390" r="10" fill="#222222"/>
+    <!-- Lander body -->
+    <g transform="translate(256, 256)">
+        <!-- Main capsule body -->
+        <rect x="-30" y="-60" width="60" height="80" fill="#dddddd" stroke="#aaaaaa" stroke-width="2" rx="5"/>
+        <!-- Top of capsule -->
+        <path d="M -30 -60 Q -30 -85 0 -85 Q 30 -85 30 -60" fill="#dddddd" stroke="#aaaaaa" stroke-width="2"/>
+        <!-- Windows -->
+        <circle cx="-15" cy="-45" r="8" fill="#88ccff" stroke="#aaaaaa"/>
+        <circle cx="15" cy="-45" r="8" fill="#88ccff" stroke="#aaaaaa"/>
+        <!-- Legs -->
+        <path d="M -30 20 L -50 60 L -40 60" fill="none" stroke="#aaaaaa" stroke-width="4"/>
+        <path d="M 30 20 L 50 60 L 40 60" fill="none" stroke="#aaaaaa" stroke-width="4"/>
+        <!-- Landing feet -->
+        <rect x="-55" y="58" width="15" height="5" fill="#aaaaaa" rx="2"/>
+        <rect x="40" y="58" width="15" height="5" fill="#aaaaaa" rx="2"/>
+        <!-- Thruster -->
+        <path d="M -20 20 L 0 40 L 20 20" fill="#ff6600"/>
+        <path d="M -15 20 L 0 30 L 15 20" fill="#ffdd00"/>
+    </g>
+    <!-- Stars in the background -->
+    <g fill="#ffffff">
+        <circle cx="50" cy="50" r="1"/>
+        <circle cx="120" cy="80" r="1.5"/>
+        <circle cx="200" cy="40" r="1"/>
+        <circle cx="300" cy="60" r="2"/>
+        <circle cx="400" cy="90" r="1"/>
+        <circle cx="480" cy="150" r="1.5"/>
+        <circle cx="40" cy="200" r="1"/>
+        <circle cx="90" cy="250" r="1"/>
+        <circle cx="450" cy="300" r="1.5"/>
+        <circle cx="380" cy="180" r="1"/>
+        <circle cx="100" cy="350" r="1"/>
+    </g>
+</svg>

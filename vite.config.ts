@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/moonylander/', // Set base for GitHub Pages deployment
   plugins: [
     react(),
-    tailwindcss(),    VitePWA({
+    tailwindcss(), VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['moonlander-icon.svg'],
       manifest: {
