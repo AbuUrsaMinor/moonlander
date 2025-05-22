@@ -29,10 +29,10 @@ export const updatePhysics = (
     // Convert rotation to radians
     const rotationRad = (rotation * Math.PI) / 180
 
-    // Calculate thrust vector
+    // Calculate thrust vector (invert x to match left/right direction)
     const thrustVector = thrust
         ? {
-            x: Math.sin(rotationRad) * THRUST_FORCE,
+            x: -Math.sin(rotationRad) * THRUST_FORCE, // negate for correct horizontal direction
             y: Math.cos(rotationRad) * THRUST_FORCE,
         }
         : { x: 0, y: 0 }
